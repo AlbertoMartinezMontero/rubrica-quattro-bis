@@ -30,13 +30,10 @@ public class RubricaController {
     public ListaContattiDto elimina(@RequestBody ContattoDto dto) {
         return rubricaService.elimina(dto.getContatto());
     }
-
-    @RequestMapping("/search")
     @ResponseBody
     public ListaContattiDto ricerca(@RequestBody CriterioRicercaDto dto) {
         return rubricaService.ricerca(dto.getStringa());
     }
-
     @RequestMapping("/refresh")
     @ResponseBody
     public ListaContattiDto aggiorna() {
