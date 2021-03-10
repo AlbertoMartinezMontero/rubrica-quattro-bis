@@ -4,10 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { SearchPageComponent } from './search-page/search-page.component';
+import { ConteggioPageComponent } from './conteggio-page/conteggio-page.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    ErrorPageComponent,
+    SearchPageComponent,
+    ConteggioPageComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

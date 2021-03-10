@@ -7,11 +7,11 @@
 <button (click)="aggiungi()">Aggiungi</button>
 
 <table>
-    <tr *ngFor="let lc of listaContatti">
-      <td>{{lc.nome}}</td>
-      <td>{{lc.cognome}}</td>
-      <td>{{lc.telefono}}</td>
-      <button (click)="cancella(lc)">Elimina</button>
+    <tr *ngFor="let d of listaContatti">
+      <td>{{d.nome}}</td>
+      <td>{{d.cognome}}</td>
+      <td>{{d.telefono}}</td>
+      <button (click)="cancella(d)">Elimina</button>
     </tr>
 </table>
 

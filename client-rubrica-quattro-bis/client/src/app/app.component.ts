@@ -17,6 +17,7 @@ export class AppComponent {
   listaContatti: Contatto[] = [];
 
   constructor(private http: HttpClient){ 
+    this.aggiornaRubrica();
   }
 
   aggiungi(){
@@ -24,5 +25,20 @@ export class AppComponent {
     dto.contatto = this.contatto;
     let oss: Observable <ListaContattiDto> = this.http.post<ListaContattiDto>("http://localhost:8080/add", dto);
     oss.subscribe(c => this.listaContatti = c.listaContatti);
+  this.contatto = new Contatto();
   }
+  cancella(c:Contatto){
+  
+    let dto: ContattoDto = new ContattoDto();
+    dto.contatto = c;
+    let ox: Observable <ListaContattiDto> = this.http.post<ListaContattiDto>(
+      "http://localhost:8080/delete", dto);
+      ox.subscribe(d=>this.listaContatti = d.listaContatti);
+  }
+  aggiornaRubrica() {
+    let oss: Observable<ListaContattiDto> = this.http.get<ListaContattiDto>(
+      "http://localhost:8080/refresh");
+    oss.subscribe(v => this.listaContatti = v.listaContatti);
+  }
+
 }
