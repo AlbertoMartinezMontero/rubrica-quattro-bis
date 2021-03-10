@@ -22,7 +22,7 @@ export class AppComponent {
   aggiungi(){
     let dto: ContattoDto = new ContattoDto();
     dto.contatto = this.contatto;
-    let oss: Observable <ListaContattiDto> = this.http.post<ListaContattiDto>("http://localhost8080/add", dto);
+    let oss: Observable <ListaContattiDto> = this.http.post<ListaContattiDto>("http://localhost:8080/add", dto);
     oss.subscribe(c => this.listaContatti = c.listaContatti);
   }
 }
