@@ -4,15 +4,15 @@
 <input type="text" placeholder="inserire telefono"[(ngModel)]="contatto.telefono">
 <br>
 <button (click)="aggiungi()">Aggiungi</button>
-
 <table>
-    <tr *ngFor="let d of listaContatti">
-      <td>{{d.nome}}</td>
-      <td>{{d.cognome}}</td>
-      <td>{{d.telefono}}</td>
-      <button (click)="cancella(d)">Elimina</button>
-    </tr>
+  <tr *ngFor="let d of listaContatti">
+    <td>{{d.nome}}</td>
+    <td>{{d.cognome}}</td>
+    <td>{{d.telefono}}</td>
+    <button (click)="cancella(d)">Elimina</button>
+  </tr>
 </table>
+<app-tabella-rubrica></app-tabella-rubrica>
 <button routerLink ="/rubrica">rubrica</button>
 
 <router-outlet></router-outlet>

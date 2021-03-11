@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,14 +8,16 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  @Input() loginUser: string = "Inserire user Id";
+  @Input() loginUser: string = "premmi qui";
 
   @Output() loginId: EventEmitter<string> = new EventEmitter<string>();
 
   user: string = "";
-
-
-  constructor() { }
+  userRegistrato: string = "quattro";
+  valore:string = "";
+  
+  
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,4 +25,16 @@ export class LoginComponent implements OnInit {
     this.loginId.emit(this.user);
 
   }
+
+  vaiAPagina(){
+    this.router.navigateByUrl(this.valore)
+  }
+  /*if(user = "quattro"){
+    this.valore = "/rubrica"
+  }
+  else{
+    this.valore = "/errore"
+    
+  } 
+  */
 }

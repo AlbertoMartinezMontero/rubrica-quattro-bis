@@ -9,6 +9,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { ConteggioPageComponent } from './conteggio-page/conteggio-page.component';
 import { MainComponent } from './main/main.component';
+import { TabellaRubricaComponent } from './tabella-rubrica/tabella-rubrica.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MainComponent } from './main/main.component';
     ErrorPageComponent,
     SearchPageComponent,
     ConteggioPageComponent,
-    MainComponent
+    MainComponent,
+    TabellaRubricaComponent
   ],
   imports: [
     BrowserModule,
