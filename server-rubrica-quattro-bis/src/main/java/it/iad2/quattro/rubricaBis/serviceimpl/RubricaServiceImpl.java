@@ -31,8 +31,18 @@ public class RubricaServiceImpl implements RubricaService {
 
     @Override
     public ListaContattiDto ricerca(String parametro) {
+        
+        ListaContattiDto dto = new ListaContattiDto();
         List<Contatto> trovati = rbrepository.findByNome(parametro);
-        return new ListaContattiDto(trovati);
+        if (trovati == null) {
+            dto.setListaContatti(new ArrayList<>());
+        } else {
+            dto.setListaContatti(trovati);
+        }
+        return dto;
+
+        //List<Contatto> trovati = rbrepository.findByNome(parametro);
+        //return new ListaContattiDto(trovati);
     }
 
     @Override
@@ -47,38 +57,20 @@ public class RubricaServiceImpl implements RubricaService {
         }
         return dto;
     }
-    
+
     @Override
     public ContaDto conta() {
         ContaDto dto = new ContaDto();
         Long c = rbrepository.count();
         if (c == null) {
             dto.setConteggio(0);
-        }
-        else {
+        } else {
             dto.setConteggio(c);
         }
         return dto;
-        
+
         // metodo non funzionante - chiedere info (null??)
         /*ContaDto dto = new ContaDto(rbrepository.count());
         return dto;*/
     }
-
-    @Override
-    public ContaDto conta() {
-        ContaDto dto = new ContaDto(rbrepository.count());
-        return dto;
-       
-
-    }
-
-    @Override
-    public ContaDto conta() {
-        ContaDto dto = new ContaDto(rbrepository.count());
-        return dto;
-       
-
-    }
-
 }

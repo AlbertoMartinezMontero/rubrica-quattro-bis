@@ -32,6 +32,7 @@ public class RubricaController {
         return rubricaService.elimina(dto.getContatto());
     }
 
+    @RequestMapping("/search")
     @ResponseBody
     public ListaContattiDto ricerca(@RequestBody CriterioRicercaDto dto) {
         return rubricaService.ricerca(dto.getStringa());
@@ -42,15 +43,7 @@ public class RubricaController {
     public ListaContattiDto aggiorna() {
         return rubricaService.aggiorna();
     }
-<<<<<<< Updated upstream
-    
-=======
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 62552e503d94960a7c72c9075fefb0b7e9f3aafc
->>>>>>> Stashed changes
     @RequestMapping("/conta")
     @ResponseBody
     public ContaDto conta() {
