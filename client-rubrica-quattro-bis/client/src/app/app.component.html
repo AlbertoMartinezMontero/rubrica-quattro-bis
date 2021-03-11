@@ -1,8 +1,7 @@
-<router-outlet></router-outlet>
 
-<input type="text" [(ngModel)]="contatto.nome">
-<input type="text" [(ngModel)]="contatto.cognome">
-<input type="text" [(ngModel)]="contatto.telefono">
+ <input type="text"placeholder="inserire nome" [(ngModel)]="contatto.nome">
+<input type="text" placeholder="inserire cognome"[(ngModel)]="contatto.cognome">
+<input type="text" placeholder="inserire telefono"[(ngModel)]="contatto.telefono">
 <br>
 <button (click)="aggiungi()">Aggiungi</button>
 
@@ -14,4 +13,6 @@
       <button (click)="cancella(d)">Elimina</button>
     </tr>
 </table>
+<button routerLink ="/rubrica">rubrica</button>
 
+<router-outlet></router-outlet>
