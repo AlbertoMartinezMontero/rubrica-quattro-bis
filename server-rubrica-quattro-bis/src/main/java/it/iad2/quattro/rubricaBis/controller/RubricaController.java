@@ -25,22 +25,32 @@ public class RubricaController {
     public ListaContattiDto aggiungi(@RequestBody ContattoDto dto) {
         return rubricaService.aggiungi(dto.getContatto());
     }
-    
+
     @RequestMapping("/delete")
     @ResponseBody
     public ListaContattiDto elimina(@RequestBody ContattoDto dto) {
         return rubricaService.elimina(dto.getContatto());
     }
+
     @ResponseBody
     public ListaContattiDto ricerca(@RequestBody CriterioRicercaDto dto) {
         return rubricaService.ricerca(dto.getStringa());
     }
+
     @RequestMapping("/refresh")
     @ResponseBody
     public ListaContattiDto aggiorna() {
         return rubricaService.aggiorna();
     }
+<<<<<<< Updated upstream
     
+=======
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 62552e503d94960a7c72c9075fefb0b7e9f3aafc
+>>>>>>> Stashed changes
     @RequestMapping("/conta")
     @ResponseBody
     public ContaDto conta() {

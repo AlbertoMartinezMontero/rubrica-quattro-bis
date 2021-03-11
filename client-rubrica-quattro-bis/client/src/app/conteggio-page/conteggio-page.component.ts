@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ContaDto } from './conta-dto';
 
 @Component({
   selector: 'app-conteggio-page',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConteggioPageComponent implements OnInit {
 
-  constructor() { }
+  conteggio: number = 0;
+
+  constructor(private http: HttpClient) {
+   }
 
   ngOnInit(): void {
   }
 
-}
+  conta(){
+    let dto: ContaDto = new ContaDto;
+    dto.conteggio = this.conteggio;
+    let oss: Observable<ContaDto> = this.http.get<ContaDto>("http://localhost:8080/conta");
+    oss.subscribe(c => this.conteggio = c.conteggio);
+    }
+  }

@@ -47,6 +47,31 @@ public class RubricaServiceImpl implements RubricaService {
         }
         return dto;
     }
+    
+    @Override
+    public ContaDto conta() {
+        ContaDto dto = new ContaDto();
+        Long c = rbrepository.count();
+        if (c == null) {
+            dto.setConteggio(0);
+        }
+        else {
+            dto.setConteggio(c);
+        }
+        return dto;
+        
+        // metodo non funzionante - chiedere info (null??)
+        /*ContaDto dto = new ContaDto(rbrepository.count());
+        return dto;*/
+    }
+
+    @Override
+    public ContaDto conta() {
+        ContaDto dto = new ContaDto(rbrepository.count());
+        return dto;
+       
+
+    }
 
     @Override
     public ContaDto conta() {
