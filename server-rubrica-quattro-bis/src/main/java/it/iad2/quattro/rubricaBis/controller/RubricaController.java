@@ -1,5 +1,6 @@
 package it.iad2.quattro.rubricaBis.controller;
 
+import it.iad2.quattro.rubricaBis.dto.ContaDto;
 import it.iad2.quattro.rubricaBis.dto.ContattoDto;
 import it.iad2.quattro.rubricaBis.dto.CriterioRicercaDto;
 import it.iad2.quattro.rubricaBis.dto.ListaContattiDto;
@@ -38,5 +39,11 @@ public class RubricaController {
     @ResponseBody
     public ListaContattiDto aggiorna() {
         return rubricaService.aggiorna();
+    }
+    
+    @RequestMapping("/conta")
+    @ResponseBody
+    public ContaDto conta() {
+        return rubricaService.conta();
     }
 }

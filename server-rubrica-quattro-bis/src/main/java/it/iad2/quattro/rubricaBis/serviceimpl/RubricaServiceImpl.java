@@ -1,5 +1,6 @@
 package it.iad2.quattro.rubricaBis.serviceimpl;
 
+import it.iad2.quattro.rubricaBis.dto.ContaDto;
 import it.iad2.quattro.rubricaBis.dto.ListaContattiDto;
 import it.iad2.quattro.rubricaBis.model.Contatto;
 import it.iad2.quattro.rubricaBis.repository.RubricaRepository;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RubricaServiceImpl implements RubricaService {
-    
+
     @Autowired
     RubricaRepository rbrepository;
 
@@ -36,7 +37,7 @@ public class RubricaServiceImpl implements RubricaService {
 
     @Override
     public ListaContattiDto aggiorna() {
-        
+
         ListaContattiDto dto = new ListaContattiDto();
         List<Contatto> listaContatti = rbrepository.findAll();
         if (listaContatti == null) {
@@ -45,6 +46,14 @@ public class RubricaServiceImpl implements RubricaService {
             dto.setListaContatti(listaContatti);
         }
         return dto;
+    }
+
+    @Override
+    public ContaDto conta() {
+        ContaDto dto = new ContaDto(rbrepository.count());
+        return dto;
+       
+
     }
 
 }
