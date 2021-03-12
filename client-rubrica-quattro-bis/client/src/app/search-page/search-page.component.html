@@ -1,12 +1,6 @@
 <p>search-page works!</p>
 <input type ="text" [(ngModel)] ="stringa">
-<table>
-    <tr *ngFor="let d of trovati">
-      <td>{{d.nome}}</td>
-      <td>{{d.cognome}}</td>
-      <td>{{d.telefono}}</td>
-    </tr>
-  </table>
+<app-tabella-rubrica></app-tabella-rubrica>
 <button (click) = "ricerca()">Cerca</button>
 
 <button routerLink ="/rubrica">Home</button>

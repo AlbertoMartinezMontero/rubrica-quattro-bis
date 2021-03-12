@@ -1,6 +1,14 @@
 <h1>Bentornato alla tua Rubrica</h1>
+<input type="text"placeholder="inserire nome" [(ngModel)]="contatto.nome">
+<input type="text" placeholder="inserire cognome"[(ngModel)]="contatto.cognome">
+<input type="text" placeholder="inserire telefono"[(ngModel)]="contatto.telefono">
 <br>
+<button (click)="aggiungi()">Aggiungi</button>
+<hr>
+<app-tabella-rubrica></app-tabella-rubrica>
 <hr>
 <button routerLink ="/cerca">Cerca Contatto</button>
 <button (click)  = "vaiAPagina('/conteggio')">N° Contatti</button>
+
+<app-tabella-rubrica></app-tabella-rubrica>
 

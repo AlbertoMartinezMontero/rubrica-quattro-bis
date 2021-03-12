@@ -1,3 +1,16 @@
-
+Ciao
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Cognome</th>
+    <th>Telefono</th>
+  </tr>
+    <tr *ngFor="let d of listaContatti">
+      <td>{{d.nome}}</td>
+      <td>{{d.cognome}}</td>
+      <td>{{d.telefono}}</td>
+      <button (click)="cancella(d)">Elimina</button>
+    </tr>
+  </table>
 
 
